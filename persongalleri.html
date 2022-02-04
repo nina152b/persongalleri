@@ -36,6 +36,7 @@
         <h2 class="navn"></h2>
         <p class="email"></p>
         <p>Født: <span class="fdag"></span></p>
+        <p>HOBBY <span class="hobby"></span></p>
       </article>
     </template>
 
@@ -52,6 +53,7 @@
         const resspons = await fetch(url, options);
         const json = await resspons.json();
         vis(json);
+        console.log(json);
       }
 
       const main = document.querySelector("main");
@@ -65,6 +67,7 @@
           klon.querySelector(".email").innerHTML =
             "<a href='mailto:" + person.email + "''>" + person.email + "</a>";
           klon.querySelector(".fdag").textContent = person.fødselsdag;
+          klon.querySelector(".hobby").textContent = person.hobby;
           main.appendChild(klon);
         });
       }
