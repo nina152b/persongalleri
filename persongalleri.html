@@ -28,6 +28,27 @@
         <img src="faces/COLOURBOX7580891.jpg" alt="billede17" />
       </section>
     </main>
-    <script></script>
+
+    <script>
+      const url = "https://persongalleri-4536.restdb.io/rest/personliste?";
+
+      const options = {
+        headers: {
+          "x-apikey": "61fcfb6d3f215f310a37be91",
+        },
+      };
+
+      async function hentData() {
+        const respons = await fetch(url, options);
+        const json = await respons.json();
+        vis(json);
+      }
+
+      function vis(json) {
+        console.log(json);
+      }
+
+      hentData();
+    </script>
   </body>
 </html>
